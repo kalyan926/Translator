@@ -117,7 +117,7 @@ Once the best model is selected based on hyperparameter tuning, it is trained fo
 ## Results of Training
 
 
-![alt text](images\training result.png)
+![alt text](images\training_result.png)
 
 ### Evaluation Metrics
 
@@ -125,7 +125,7 @@ The model’s performance is evaluated using the BLEU score. The BLEU score meas
 
 ### Training Performance
 
-1. **Convergence Speed**: The model converges faster due to the scheduled learning rate. The learning rate schedule allows the model to make rapid initial progress and then fine-tune its parameters, leading to efficient training.
+1. **Convergence Speed**: The model converges faster due to the cosine decay scheduled learning rate. The learning rate schedule allows the model to make rapid initial progress and then training its parameters, leading to efficient training.
 
 2. **Translation Quality**: The translations produced by the model capture the nuances and context of the source text effectively. The use of multihead attention and the Transformer architecture's ability to consider the entire context of the sentence contribute to high-quality translations.
 
@@ -135,13 +135,11 @@ The model’s performance is evaluated using the BLEU score. The BLEU score meas
 
 The BLEU score is used to evaluate the translation quality by comparing the model's output to reference translations. A higher BLEU score indicates better performance. The BLEU score calculation involves comparing n-grams in the model's translations to those in the reference translations, measuring precision and recall.
 
-![alt text](images\BLEU score.png)
+![alt text](images\BLEU_score.png)
 
 ### Qualitative Analysis
 
-Sample translations are reviewed to qualitatively assess the accuracy and contextual richness of the translations. The Transformer model's ability to handle long-term dependencies and subtle semantic nuances is evident in these samples. The qualitative analysis involves examining how well the
-
- model preserves the meaning and context of the source text in its translations.
+Sample translations are reviewed to qualitatively assess the accuracy and contextual richness of the translations. The Transformer model's ability to handle long-term dependencies and subtle semantic nuances is evident in these samples. The qualitative analysis involves examining how well the model preserves the meaning and context of the source text in its translations.
 
 ## Conclusion
 
