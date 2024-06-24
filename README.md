@@ -92,9 +92,9 @@ A custom training loop is implemented to have greater control over the training 
 
 4. **Learning Rate Scheduling**: A learning rate schedule is used to adjust the learning rate dynamically. Initially, a high learning rate helps the model converge quickly, and it is gradually reduced to fine-tune the model parameters. The learning rate schedule can follow a predefined pattern, such as the warm-up strategy followed by decay.
 
-### Scheduled Learning Rate
-
-A learning rate schedule is employed to start with a high learning rate to quickly reach a near-optimal region and then reduce it to refine the model parameters. This approach helps in achieving faster convergence and avoids getting stuck in local minima. The learning rate schedule can be implemented using callbacks in TensorFlow that adjust the learning rate at predefined intervals or based on the performance on the validation set.
+### Learning Rate Scheduling
+![alt text](images/cosinedecay_with_warmup.png)
+A cosine decay learning rate schedule is implemented in training, it starts with a initial learning rate and then gradually increases linearly to a target learning rate in predefined warmup steps their after it gradually decreases to minimum learning rate with cosine curve over predefined decay steps as shown in the above figure. This approach helps in achieving faster convergence and avoids getting stuck in local minima.
 
 ## How Hyperparameter Tuning is Done to Select Best Model
 
@@ -110,9 +110,7 @@ KerasTuner is utilized to find the best hyperparameters. The process involves:
 
 ### Further Training of the Selected Model
 
-Once the best model is selected based on hyperparameter tuning, it is trained for more epochs to further refine its parameters and enhance learning. This involves:
-
-1. **Increasing Epochs**: Extending the training duration allows the model to learn more complex patterns and improve its generalization capabilities. Additional epochs help the model fine-tune its weights based on the entire training dataset.
+Once the best model is selected based on hyperparameter tuning, it is trained for more epochs to further refine its parameters and enhance learning. This involves increasing Epochs to extend the training duration allows the model to learn more complex patterns and improve its generalization capabilities. 
 
 2. **Fine-Tuning Learning Rate**: Further adjusting the learning rate to ensure stable and efficient convergence. The learning rate is reduced gradually to allow the model to make finer adjustments to the weights, avoiding large updates that could destabilize the training process.
 
