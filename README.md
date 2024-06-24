@@ -8,33 +8,15 @@ In the domain of natural language processing (NLP), language translation is a ch
 
 ### Limitations of Bidirectional LSTMs
 
-Bidirectional LSTMs have been effective in handling sequential data and capturing dependencies across time steps. However, they suffer from several limitations:
-
-1. **Sequential Processing**: LSTMs process input sequentially, which makes them slow and computationally expensive, especially for long sequences. Each time step depends on the computation of the previous time step, limiting parallelization.
-   
-2. **Long-term Dependencies**: While LSTMs can capture long-term dependencies, their performance degrades with very long sequences due to the vanishing gradient problem. This limits their ability to learn dependencies over extended contexts.
-
-3. **Fixed Context Window**: The fixed-size context window used in LSTMs limits the model’s ability to consider distant words in the sentence for context. This results in a loss of important contextual information.
+Bidirectional LSTMs have been effective in handling sequential data and capturing dependencies across time steps. However, they suffer from several limitations: **Sequential Processing,** **Long-term Dependencies,** **Fixed Context Window**
 
 ### Advantages of Transformer Architecture
 
-The Transformer architecture addresses these limitations with the following features:
-
-1. **Parallel Processing**: Transformers process input sequences in parallel, significantly speeding up both training and inference. This is achieved through self-attention mechanisms that do not rely on previous computations.
-
-2. **Self-Attention Mechanism**: The self-attention mechanism allows the model to weigh the importance of different words in a sentence, regardless of their position, effectively capturing long-term dependencies and contextual relationships.
-
-3. **Scalability**: Transformers can handle much longer sequences due to their non-sequential nature. They are more scalable and can be extended to larger datasets and more complex tasks.
-
-4. **Contextual Representation**: The multihead attention mechanism enables the model to capture subtle nuances and semantic relationships in the text, leading to more accurate and contextually rich translations.
+The Transformer architecture addresses these limitations with the following features: **Parallel Processing,** **Self-Attention Mechanism,** **Contextual Representation,** **Scalability**
 
 ## Details of the Transformer Architecture Implemented
 
-
-
 ![alt text](images/architecture.png)
-
-
 
 ### Model Components
 
@@ -59,23 +41,13 @@ The Transformer architecture addresses these limitations with the following feat
 
 ### Customization with Keras Subclassing
 
-The model is built using Keras subclassing APIs, providing flexibility to customize the architecture. This approach allows for fine-tuning various components and integrating custom functionalities as needed. Keras subclassing enables the creation of custom layers, models, and training loops, giving precise control over the model's behavior.
+The model is built using Keras subclassing APIs, providing flexibility to customize the architecture.Keras subclassing enables the creation of custom layers, models, and training loops, giving precise control over the model's behavior.
 
 ## Preprocessing the Datasets
 
 ### Dataset Collection
 
 The training dataset consists of 10000 parallel English-Telugu sentence pairs.
-**Frequency distribution of sequence lenghts of sentences**
-![alt text](images/frequency_of_sequence_lenghts.png)
-**Frequency distribution of subword id's**
-![alt text](images/frequency_of_subword.png)
-**Frequency of top 50 english subwords**
-![alt text](images/frequency_of_top_50_english_subwords.png)
-**Frequency of top 50 telugu subwords**
-![alt text](images/frequency_of_top_50_telugu_subwords.png)
-
-
 
 ### Data Preprocessing Steps
 
@@ -86,6 +58,25 @@ The training dataset consists of 10000 parallel English-Telugu sentence pairs.
 3. **Vocabulary Creation**: A vocabulary is created from the dataset, which includes all unique tokens (words or subwords) in the training data. Each token is assigned a unique integer index.
 
 4. **Cleaning**: Data cleaning involves removing noise such as special characters, HTML tags, and other irrelevant information. It also includes normalizing text to a consistent format, such as lowercasing and removing extra spaces.
+
+**Frequency distribution of sequence lenghts of sentences**
+![alt text](images/frequency_of_sequence_lenghts.png)
+
+
+
+**Frequency distribution of subword id's**
+![alt text](images/frequency_of_subword.png)
+
+
+**Frequency of top 50 english subwords**
+![alt text](images/frequency_of_top_50_english_subwords.png)
+
+
+
+**Frequency of top 50 telugu subwords**
+![alt text](images/frequency_of_top_50_telugu_subwords.png)
+
+
 
 ## How Training is Done
 
@@ -111,11 +102,9 @@ A learning rate schedule is employed to start with a high learning rate to quick
 
 KerasTuner is utilized to find the best hyperparameters. The process involves:
 
-1. **Defining the Search Space**: The search space includes hyperparameters such as the number of layers, number of attention heads, embedding dimensions, learning rate, batch size, and dropout rate. These hyperparameters significantly affect the model's performance and training efficiency.
+1. **Defining the Search Space**: The search space includes hyperparameters such as the number of layers, embedding dimensions, learning rate, batch size, and dropout rate. These hyperparameters significantly affect the model's performance and training efficiency.But we are using number of layers,embedding dimensions, dff of feed forward layer, dropout rate as hyperparameters and remaining are fixed such as vocabulary size,learning rate,batch size.
 
-2. **Custom Metric**: The BLEU score is used as a custom metric to evaluate translation quality. The BLEU score compares the model's translations to reference translations, measuring the precision and recall of n-grams.
-
-3. **Running Trials**: Multiple models are trained with different hyperparameter combinations. KerasTuner systematically explores the search space by training models and evaluating their performance based on the BLEU score. The best model is selected based on the highest BLEU score achieved during the trials.
+2. **Running Trials**: Multiple models are trained with different hyperparameter combinations. KerasTuner systematically explores the search space with various number of executions from strach with new intializations per trail to avoid model falling in the plateau region of loss and evaluating their performance based on the Accuracy. The best model is selected based on the highest Accuracy score achieved during the trials.
 
 ## How Parameter Tuning is Done After Hyperparameter Tuning
 
