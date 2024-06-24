@@ -66,10 +66,13 @@ The model is built using Keras subclassing APIs, providing flexibility to custom
 ### Dataset Collection
 
 The training dataset consists of 10000 parallel English-Telugu sentence pairs.
-
+**Frequency distribution of sequence lenghts of sentences**
 ![alt text](images/frequency_of_sequence_lenghts.png)
+**Frequency distribution of subword id's**
 ![alt text](images/frequency_of_subword.png)
+**Frequency of top 50 english subwords**
 ![alt text](images/frequency_of_top_50_english_subwords.png)
+**Frequency of top 50 telugu subwords**
 ![alt text](images/frequency_of_top_50_telugu_subwords.png)
 
 
