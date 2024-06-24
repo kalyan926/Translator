@@ -32,7 +32,7 @@ The Transformer architecture addresses these limitations with the following feat
 
 
 
-![alt text](images\architecture.png)
+![alt text](images/architecture.png)
 
 
 
@@ -44,10 +44,10 @@ The Transformer architecture addresses these limitations with the following feat
 
 
 
-![alt text](images\attention.png)
+![alt text](images/attention.png)
 
 
-![alt text](images\softmax.png)
+![alt text](images/softmax.png)
 
 3. **Multihead Attention**: Multihead attention allows the model to focus on different parts of the sentence simultaneously. Multiple attention heads enable the model to capture various aspects of the context, enhancing its ability to understand complex dependencies.
 
@@ -67,10 +67,10 @@ The model is built using Keras subclassing APIs, providing flexibility to custom
 
 The training dataset consists of 10000 parallel English-Telugu sentence pairs.
 
-![alt text](images\frequency_of_sequence_lenghts.png)
-![alt text](images\frequency_of_subword.png)
-![alt text](images\frequency_of_top_50_english_subwords.png)
-![alt text](images\frequency_of_top_50_telugu_subwords.png)
+![alt text](images/frequency_of_sequence_lenghts.png)
+![alt text](images/frequency_of_subword.png)
+![alt text](images/frequency_of_top_50_english_subwords.png)
+![alt text](images/frequency_of_top_50_telugu_subwords.png)
 
 
 
