@@ -117,7 +117,7 @@ Once the best model is selected based on hyperparameter tuning, it is trained fo
 ## Results of Training
 
 
-![alt text](images\training_result.png)
+![alt text](images/training_result.png)
 
 ### Evaluation Metrics
 
@@ -135,7 +135,7 @@ The model’s performance is evaluated using the BLEU score. The BLEU score meas
 
 The BLEU score is used to evaluate the translation quality by comparing the model's output to reference translations. A higher BLEU score indicates better performance. The BLEU score calculation involves comparing n-grams in the model's translations to those in the reference translations, measuring precision and recall.
 
-![alt text](images\BLEU_score.png)
+![alt text](images/BLEU_score.png)
 
 ### Qualitative Analysis
 
