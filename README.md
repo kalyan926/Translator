@@ -16,7 +16,7 @@ The Transformer architecture addresses these limitations with the following feat
 
 ## Details of the Transformer Architecture Implemented
 
-![alt text](images/architecture.png)
+![alt text](images/architecture_s.png)
 
 ### Model Components
 
