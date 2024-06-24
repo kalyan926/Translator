@@ -116,6 +116,9 @@ Once the best model is selected based on hyperparameter tuning, it is trained fo
 
 ## Results of Training
 
+
+![alt text](images\training result.png)
+
 ### Evaluation Metrics
 
 The model’s performance is evaluated using the BLEU score. The BLEU score measures the overlap between the model's translations and reference translations, providing a quantitative assessment of translation quality. The results demonstrate that the Transformer-based translator significantly improves translation quality compared to traditional methods like bidirectional LSTMs.
@@ -131,6 +134,8 @@ The model’s performance is evaluated using the BLEU score. The BLEU score meas
 ### BLEU Score
 
 The BLEU score is used to evaluate the translation quality by comparing the model's output to reference translations. A higher BLEU score indicates better performance. The BLEU score calculation involves comparing n-grams in the model's translations to those in the reference translations, measuring precision and recall.
+
+![alt text](images\BLEU score.png)
 
 ### Qualitative Analysis
 
