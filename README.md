@@ -51,13 +51,13 @@ The training dataset consists of 10000 parallel English-Telugu sentence pairs.
 
 ### Data Preprocessing Steps
 
-1. **Tokenization**: Tokenization involves splitting sentences into words or subwords. Subword tokenization techniques like Byte Pair Encoding (BPE) or WordPiece are used to handle rare words and improve the model's ability to generalize.
+1. **Tokenization:** Tokenization involves splitting text into smaller units, such as subwords, using the **WordPiece** algorithm. In this project, the `tfds.deprecated.text.SubwordTextEncoder.build_from_corpus()` function is used. This function processes a large corpus of text data, starting with individual characters and iteratively merging the most frequent pairs to form subword units.This approach ensures that the text is efficiently preprocessed, with suitable handling of both frequent and rare words through WordPiece subword tokenization.
 
-2. **Padding**: Padding ensures that all sequences are of the same length for batch processing. Shorter sequences are padded with a special token to match the length of the longest sequence in the batch.
+2. **Vocabulary Creation:**Vocabulary creation generates a set of unique tokens from the tokenized corpus, assigning each token a unique integer index. The Telugu dataset resulted in a vocabulary of 2,768 subwords, while the English dataset has 8,566 subwords.
 
-3. **Vocabulary Creation**: A vocabulary is created from the dataset, which includes all unique tokens (words or subwords) in the training data. Each token is assigned a unique integer index.
+3. **Padding**: Padding ensures that all sequences are of the same length for batch processing. Shorter sequences are padded with a special token to match the length of the longest sequence in the batch.
 
-4. **Cleaning**: Data cleaning involves removing noise such as special characters, HTML tags, and other irrelevant information. It also includes normalizing text to a consistent format, such as lowercasing and removing extra spaces.
+4. **Cleaning**: Data cleaning involves removing noise such as special characters and other irrelevant information. It also includes normalizing text to a consistent format, such as lowercasing and removing extra spaces.
 
 ### Some distributions to get the details of the Dataset
 
@@ -152,7 +152,7 @@ The qualitative analysis involves examining how well the model preserves the mea
 
 ![alt text](images/predictions_examples.png)
 
-2. **Translation Quality**: The translations produced by the model capture the nuances and context of the source text effectively. The use of multihead attention and the Transformer architecture's ability to consider the entire context of the sentence contribute to high-quality translations.
+**Translation Quality**: The translations produced by the model capture the nuances and context of the source text effectively. The use of multihead attention and the Transformer architecture's ability to consider the entire context of the sentence contribute to high-quality translations.
 
 ## Conclusion
 
