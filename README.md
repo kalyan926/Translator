@@ -53,7 +53,7 @@ The training dataset consists of 10000 parallel English-Telugu sentence pairs.
 
 1. **Tokenization:** Tokenization involves splitting text into smaller units, such as subwords, using the **WordPiece** algorithm. In this project, the `tfds.deprecated.text.SubwordTextEncoder.build_from_corpus()` function is used. This function processes a large corpus of text data, starting with individual characters and iteratively merging the most frequent pairs to form subword units.This approach ensures that the text is efficiently preprocessed, with suitable handling of both frequent and rare words through WordPiece subword tokenization.
 
-2. **Vocabulary Creation:**Vocabulary creation generates a set of unique tokens from the tokenized corpus, assigning each token a unique integer index. The Telugu dataset resulted in a vocabulary of 2,768 subwords, while the English dataset has 8,566 subwords.
+2. **Vocabulary Creation:** Vocabulary creation generates a set of unique tokens from the tokenized corpus, assigning each token a unique integer index. The Telugu dataset resulted in a vocabulary of 2,768 subwords, while the English dataset has 8,566 subwords.
 
 3. **Padding**: Padding ensures that all sequences are of the same length for batch processing. Shorter sequences are padded with a special token to match the length of the longest sequence in the batch.
 
