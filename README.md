@@ -101,20 +101,21 @@ KerasTuner is utilized to find the best hyperparameters. The process involves:
 
 Trial 2 details:
 Hyperparameters:
-d_model: 128
-rate: 0.1
-enc_lay: 2
+d_model=128,
+rate=0.1,
+enc_lay=2
 
 **Complete Details of the Transformer model choosen hyperparameters:**
-max_seqlen=512
-d_model=128
-telugu_vocab_size=2770
-english_vocab_size=8568
-heads=8
-dff=4*d_model
-rate=0.1
-enc_lay=2
-dec_lay=2
+
+ max_seqlen=512, 
+ d_model=128, 
+ telugu_vocab_size=2770, 
+ english_vocab_size=8568, 
+ heads=8, 
+ dff=4*d_model, 
+ rate=0.1, 
+ enc_lay=2, 
+ dec_lay=2, 
 
 ## How Parameter Tuning is Done After Hyperparameter Tuning
 
