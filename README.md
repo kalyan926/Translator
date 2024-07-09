@@ -79,18 +79,11 @@ The training dataset consists of 10000 parallel English-Telugu sentence pairs.
 
 A custom training loop is implemented to have greater control over the training process. This includes:
 
-1. **Forward Pass**: In the forward pass, the input data is fed through the model to calculate predictions. The embeddings, positional encodings, and multihead attention mechanisms process the input to produce context-aware representations.
-
-2. **Loss Calculation**: The loss is calculated using categorical cross-entropy, which measures the difference between the predicted probability distribution and the actual target distribution. This loss is used to guide the optimization process.
-
-3. **Backward Pass**: In the backward pass, gradients are computed for each parameter in the model using backpropagation. These gradients indicate how each parameter should be adjusted to minimize the loss.
-
-4. **Learning Rate Scheduling**: A learning rate schedule is used to adjust the learning rate dynamically. Initially, a high learning rate helps the model converge quickly, and it is gradually reduced to fine-tune the model parameters. The learning rate schedule can follow a predefined pattern, such as the warm-up strategy followed by decay.
-
-### Learning Rate Scheduling
-
-![alt text](images/cosinedecay_with_warmup.png)
-A cosine decay learning rate schedule is implemented in training, it starts with a initial learning rate and then gradually increases linearly to a target learning rate in predefined warmup steps their after it gradually decreases to minimum learning rate with cosine curve over predefined decay steps as shown in the above figure. This approach helps in achieving faster convergence and avoids getting stuck in local minima.
+- **Forward Pass:** Implemented with `tf.GradientTape()` for computation.
+- **Loss Calculation:** Uses sparse categorical cross-entropy to guide optimization.
+- **Backward Pass:** Computes gradients using backpropagation for parameter updates.
+- **ADAM Optimizer:** Updates parameters using ADAM optimizer for efficient convergence.
+- **Learning Rate Scheduling:** Utilizes cosine decay to adjust learning rates over time, typically starting high and gradually decreasing after a warm-up phase.
 
 ## How Hyperparameter Tuning is Done to Select Best Model
 
