@@ -85,7 +85,6 @@ A custom training loop is implemented to have greater control over the training 
 - **ADAM Optimizer:** Updates parameters using ADAM optimizer for efficient convergence.
 - **Learning Rate Scheduling:** Utilizes cosine decay to adjust learning rates over time, typically starts with initial rate, linearly ramps to target over warmup, then decays cosine-like to minimum learning rate
 
-
 ## How Hyperparameter Tuning is Done to Select Best Model
 
 ### Using KerasTuner
@@ -105,6 +104,17 @@ Hyperparameters:
 d_model: 128
 rate: 0.1
 enc_lay: 2
+
+**Complete Details of the Transformer model choosen hyperparameters:**
+max_seqlen=512
+d_model=128
+telugu_vocab_size=2770
+english_vocab_size=8568
+heads=8
+dff=4*d_model
+rate=0.1
+enc_lay=2
+dec_lay=2
 
 ## How Parameter Tuning is Done After Hyperparameter Tuning
 
@@ -150,6 +160,6 @@ The qualitative analysis involves examining how well the model preserves the mea
 
 ## Conclusion
 
-This project presents a comprehensive approach to building an English to Telugu translator using the Transformer architecture. The flexibility of Keras subclassing APIs, combined with a custom training loop and scheduled learning rates, allows for effective training of the model. The use of multihead attention mechanisms enhances the model's ability to handle long-term dependencies, resulting in more accurate and contextually rich translations. The successful application of KerasTuner for hyperparameter optimization further refines the model's performance. The results, evaluated using the BLEU score, demonstrate the efficacy of this approach in producing high-quality translations. This work highlights the superiority of Transformer architecture in language translation tasks.
+This project presents a comprehensive approach to building an English to Telugu translator using the Transformer architecture. The flexibility of Keras subclassing APIs, combined with a custom training loop and scheduled learning rates, allows for effective training of the model. The use of multihead attention mechanisms enhances the model's ability to handle long-term dependencies, resulting in more accurate and contextually rich translations. The application of KerasTuner for hyperparameter optimization further refines the model's performance. The results, evaluated using the BLEU score, demonstrate the efficacy of this approach in producing high-quality translations. This work highlights the superiority of Transformer architecture in language translation tasks.
 
 ---
