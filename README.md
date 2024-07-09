@@ -156,7 +156,7 @@ Throughout the training process, both training loss and accuracy of training sam
 
 ### Evaluation Metrics
 
-The model’s performance is evaluated using the BLEU score.The BLEU score measures translation quality by comparing the model's output to reference translations. A higher BLEU score indicates better performance. The BLEU score calculation involves comparing n-grams in the model's translations to those in the reference translations, measuring precision.
+The model’s performance is evaluated using the BLEU score.The BLEU score measures translation quality by comparing the model's output to reference translations. A higher BLEU score indicates better performance.The BLEU score compares (1-4)n-grams of candidate translations to reference translations by calculating precision, applying a brevity penalty for short translations, and using the geometric mean of precision scores to assess translation quality.
 
 ### BLEU Score
 
