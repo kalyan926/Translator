@@ -1,4 +1,17 @@
 # English to Telugu Translator Using Transformer Architecture
+---
+
+[Introduction, ](#introduction)
+[Why Transformer Architecture ?, ](#why-transformer-architecture-)
+[Details of the Transformer Architecture Implemented, ](#details-of-the-transformer-architecture-implemented)
+[Preprocessing the Datasets, ](#preprocessing-the-datasets)
+[How Training is Done, ](#how-training-is-done)
+[Hyperparameter Tuning, ](#how-hyperparameter-tuning-is-done-to-select-best-model)
+[Parameter Tuning, ](#how-parameter-tuning-is-done-after-hyperparameter-tuning)
+[Results of Training, ](#results-of-training)
+[BLEU Evaluation, ](#evaluation-of-the-model)
+[Conclusion](#conclusion)
+
 
 ## Introduction
 
@@ -44,7 +57,7 @@ The model is built using Keras subclassing APIs, providing flexibility to custom
 
 ### Dataset Collection
 
-The training dataset consists of 10000 parallel English-Telugu sentence pairs.
+The training dataset consists of 10205 parallel English-Telugu sentence pairs.
 
 **Samples of dataset**
 ![alt text](images/Samples.png)
@@ -83,7 +96,7 @@ A custom training loop is implemented to have greater control over the training 
 - **Loss Calculation:** Uses sparse categorical cross-entropy to guide optimization.
 - **Backward Pass:** Computes gradients using backpropagation for parameter updates.
 - **ADAM Optimizer:** Updates parameters using ADAM optimizer for efficient convergence.
-- **Learning Rate Scheduling:** Utilizes cosine decay to adjust learning rates over time, typically starts with initial rate, linearly ramps to target over warmup, then decays cosine-like to minimum learning rate
+- **Learning Rate Scheduling:** Utilizes cosine decay to adjust learning rates over time, typically starts with initial rate, linearly ramps to target over warmup, then decays cosine-like to minimum learning rate.
 
 ## How Hyperparameter Tuning is Done to Select Best Model
 
@@ -115,7 +128,7 @@ enc_lay=2
  dff=4*d_model, 
  rate=0.1, 
  enc_lay=2, 
- dec_lay=2, 
+ dec_lay=2.
 
 ## How Parameter Tuning is Done After Hyperparameter Tuning
 
