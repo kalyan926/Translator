@@ -1,15 +1,15 @@
 # English to Telugu Translator Using Transformer Architecture
 ---
 
-[Introduction, ](#introduction)
-[Why Transformer Architecture ?, ](#why-transformer-architecture-)
-[Details of the Transformer Architecture Implemented, ](#details-of-the-transformer-architecture-implemented)
-[Preprocessing the Datasets, ](#preprocessing-the-datasets)
-[How Training is Done, ](#how-training-is-done)
-[Hyperparameter Tuning, ](#how-hyperparameter-tuning-is-done-to-select-best-model)
-[Parameter Tuning, ](#how-parameter-tuning-is-done-after-hyperparameter-tuning)
-[Results of Training, ](#results-of-training)
-[BLEU Evaluation, ](#evaluation-of-the-model)
+[Introduction,](#introduction)
+[Why Transformer Architecture ?,](#why-transformer-architecture-)
+[Details of the Transformer Architecture Implemented,](#details-of-the-transformer-architecture-implemented)
+[Preprocessing the Datasets,](#preprocessing-the-datasets)
+[How Training is Done,](#how-training-is-done)
+[Hyperparameter Tuning,](#how-hyperparameter-tuning-is-done-to-select-best-model)
+[Parameter Tuning,](#how-parameter-tuning-is-done-after-hyperparameter-tuning)
+[Results of Training,](#results-of-training)
+[BLEU Evaluation,](#evaluation-of-the-model)
 [Conclusion](#conclusion)
 
 
