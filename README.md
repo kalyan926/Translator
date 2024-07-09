@@ -83,7 +83,8 @@ A custom training loop is implemented to have greater control over the training 
 - **Loss Calculation:** Uses sparse categorical cross-entropy to guide optimization.
 - **Backward Pass:** Computes gradients using backpropagation for parameter updates.
 - **ADAM Optimizer:** Updates parameters using ADAM optimizer for efficient convergence.
-- **Learning Rate Scheduling:** Utilizes cosine decay to adjust learning rates over time, typically starting high and gradually decreasing after a warm-up phase.
+- **Learning Rate Scheduling:** Utilizes cosine decay to adjust learning rates over time, typically starts with initial rate, linearly ramps to target over warmup, then decays cosine-like to minimum learning rate
+
 
 ## How Hyperparameter Tuning is Done to Select Best Model
 
