@@ -1,4 +1,5 @@
 # English to Telugu Translator Using Transformer Architecture
+
 ---
 
 [Introduction,](#introduction)
@@ -11,7 +12,6 @@
 [Results of Training,](#results-of-training)
 [BLEU Evaluation,](#evaluation-of-the-model)
 [Conclusion](#conclusion)
-
 
 ## Introduction
 
@@ -120,15 +120,17 @@ enc_lay=2
 
 **Complete Details of the Transformer model choosen hyperparameters:**
 
- max_seqlen=512, 
- d_model=128, 
- telugu_vocab_size=2770, 
- english_vocab_size=8568, 
- heads=8, 
- dff=4*d_model, 
- rate=0.1, 
- enc_lay=2, 
- dec_lay=2.
+max_seqlen=512,
+d_model=128,
+telugu_vocab_size=2770,
+english_vocab_size=8568,
+heads=8,
+dff=4*d_model,
+rate=0.1,
+enc_lay=2,
+dec_lay=2
+
+**Train size 95% & Validation size 5%**
 
 ## How Parameter Tuning is Done After Hyperparameter Tuning
 
